@@ -1,30 +1,21 @@
-// export class UserModel {
-//     private mongoose: any
-//     private schema: any
-//     private model: any
+import { Schema, Document, model } from 'mongoose';
 
-//     constructor() {
-//         this.mongoose = require('mongoose');
-//         this.schema = new this.mongoose.Schema({
-//             id: String,
-//             name: String,
-//             email: String,
-//             phone: String,
-//             prof_img: String,
-//             location: String
-//         })
-//         this.model = this.mongoose.model('user', this.schema)
-//     }
-// }
-
-const mongoose = require('mongoose');
-const userSchema = new mongoose.Schema({
+export interface UserModel extends Document {
     id: String,
     name: String,
     email: String,
     phone: String,
     prof_img: String,
     location: String
+}
+
+const UserSchema: Schema = new Schema({
+    id: { type: String, required: true },
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    phone: { type: String, required: true },
+    prof_img: { type: String, required: true },
+    location: { type: String, required: true },
 })
-const userModel = mongoose.model('user', userSchema)
-module.exports = userModel
+
+export const User = model<UserModel>('Product', UserSchema);
