@@ -18,4 +18,4 @@ const UserSchema: Schema = new Schema({
     location: { type: String, required: true },
 })
 
-export const User = model<UserModel>('Product', UserSchema);
+export const UserModel = model<UserModel>('Product', UserSchema);
