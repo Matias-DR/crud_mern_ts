@@ -2,7 +2,7 @@ import { Router, Request, Response } from 'express';
 import { UserCtrler } from '../controllers/user-ctrler';
 
 class Routes {
-    private router: Router;
+    router: Router;
     private usrCtrler: UserCtrler;
 
     constructor() {
@@ -18,3 +18,7 @@ class Routes {
         this.router.post('/del_user', this.usrCtrler.delUser)
     }
 }
+
+const routes = new Routes();
+
+export default routes.router;
