@@ -5,7 +5,7 @@ export interface UserModel extends Document {
     name: String,
     email: String,
     phone: String,
-    prof_img: String,
+    prof_img: string,
     location: String
 }
 
