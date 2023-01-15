@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Users from './components/user/user-list'
 
 interface Props { }
 interface State {
@@ -41,7 +42,7 @@ export default class App extends Component<Props, State> {
             </nav>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/' element={<Users input={user_search_input}/>}></Route>
+                    <Route path='/' element={<Users input={this.state.userSearchInput}/>}></Route>
                     <Route path='/add_user' element={<AddUser />}></Route>
                     <Route path='/user_edit/:id' element={<UserEdit />}></Route>
                 </Routes>
