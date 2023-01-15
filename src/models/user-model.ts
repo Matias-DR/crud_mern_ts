@@ -1,7 +1,7 @@
 import { Schema, Document, model } from 'mongoose';
 
 export interface UserModel extends Document {
-    id: String,
+    id: string,
     name: String,
     email: String,
     phone: String,
